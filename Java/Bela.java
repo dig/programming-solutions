@@ -1,9 +1,9 @@
-import java.util.Scanner;
-
 /**
  * @author Joseph.
  * https://open.kattis.com/problems/bela
  */
+
+import java.util.Scanner;
 
 enum Card {
 
