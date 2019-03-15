@@ -52,13 +52,11 @@ public class TenKindsOfPeople {
         //--- Parse coordinates
         Map<Coordinate, Coordinate> coordinateMap = new LinkedHashMap<>();
         for (int i = 0; i < amountOfCoords; i++) {
-            coordinateMap.put(
-                    new Coordinate(sc.nextInt() - 1, sc.nextInt() - 1),
-                    new Coordinate(sc.nextInt() - 1, sc.nextInt() - 1)
-            );
-        }
+            Coordinate from = new Coordinate(sc.nextInt() - 1, sc.nextInt() - 1);
+            Coordinate to = new Coordinate(sc.nextInt() - 1, sc.nextInt() - 1);
 
-        sc.close();
+            coordinateMap.put(from, to);
+        }
 
         //--- Check if coordinate can go from one to another
         for (Coordinate from : coordinateMap.keySet()) {
@@ -77,6 +75,8 @@ public class TenKindsOfPeople {
 
             System.out.println(result);
         }
+
+        sc.close();
     }
 
     public static int[][] deepCopyIntMatrix(int[][] input) {
