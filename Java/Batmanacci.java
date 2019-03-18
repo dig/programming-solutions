@@ -3,8 +3,6 @@
  * https://open.kattis.com/problems/batmanacci
  */
 
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Scanner;
 
 class Sequence {
@@ -17,17 +15,30 @@ class Sequence {
         this.s2 = s2;
     }
 
-    public String get(int index) {
-        List<String> sequence = new LinkedList<>();
-        sequence.add(String.valueOf(s1));
-        sequence.add(String.valueOf(s2));
+    public char get(int index, int letter) {
+        int[] seq = new int[index];
+        seq[0] = 0;
+        seq[1] = 1;
+        seq[2] = 1;
 
-        //--- Loop all combinations until index
-        for (int i = 2; i < index + 2; i++) {
-            sequence.add(sequence.get(i - 2) + sequence.get(i - 1));
+        for (int i = 3; i < index; i++) {
+            seq[i] = seq[i - 1] + seq[i - 2];
         }
 
-        return sequence.get(sequence.size() - 1);
+        while (index > 2) {
+            if (letter > seq[index - 2]) {
+                letter -= seq[index - 2];
+                index -= 1;
+            } else {
+                index -= 2;
+            }
+        }
+
+        if (index == 1) {
+            return s1;
+        }
+
+        return s2;
     }
 
 }
@@ -42,7 +53,7 @@ public class Batmanacci {
         sc.close();
 
         Sequence sequence = new Sequence('N', 'A');
-        System.out.println(sequence.get(sequenceNum).charAt(letterNum - 1));
+        System.out.println(sequence.get(sequenceNum, letterNum));
     }
 
 }
