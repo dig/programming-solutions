@@ -37,7 +37,7 @@ public class TenKindsOfPeople {
         int column = sc.nextInt();
         sc.nextLine();
 
-        //--- Parse map into 2D int array
+        // Parse map into 2D int array
         int[][] map = new int[row][column];
         for (int i = 0; i < row; i++) {
             char[] chars = sc.nextLine().toCharArray();
@@ -49,7 +49,7 @@ public class TenKindsOfPeople {
 
         int amountOfCoords = sc.nextInt();
 
-        //--- Parse coordinates
+        // Parse coordinates
         Map<Coordinate, Coordinate> coordinateMap = new LinkedHashMap<>();
         for (int i = 0; i < amountOfCoords; i++) {
             Coordinate from = new Coordinate(sc.nextInt() - 1, sc.nextInt() - 1);
@@ -58,7 +58,7 @@ public class TenKindsOfPeople {
             coordinateMap.put(from, to);
         }
 
-        //--- Check if coordinate can go from one to another
+        // Check if coordinate can go from one to another
         for (Coordinate from : coordinateMap.keySet()) {
             Coordinate to = coordinateMap.get(from);
 

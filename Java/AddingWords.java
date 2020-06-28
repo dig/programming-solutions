@@ -97,12 +97,12 @@ public class AddingWords {
                     Queue<String> variableOrder = new LinkedList<>();
                     Queue<Operation> operationOrder = new LinkedList<>();
 
-                    //--- Find all variables
+                    // Find all variables
                     for (String var : parseLine.split("\\+|-|\\*|\\/")) {
                         variableOrder.add(var);
                     }
 
-                    //--- Find all operations
+                    // Find all operations
                     for (char character : parseLine.toCharArray()) {
                         for (Operation operation : Operation.values()) {
                             if (operation.getSymbol() == character) {

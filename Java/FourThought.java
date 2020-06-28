@@ -72,7 +72,7 @@ public class FourThought {
     public static void main(String[] args) {
         HashMap<Integer, Combination> combinationHashMap = new HashMap<>();
 
-        //--- Build all possible combinations.
+        // Build all possible combinations.
         for (int i = 0; i < Operation.values().length; i++) {
             for (int j = 0; j < Operation.values().length; j++) {
                 for (int k = 0; k < Operation.values().length; k++) {

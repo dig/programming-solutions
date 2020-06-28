@@ -25,7 +25,6 @@ public class Alphabet {
             result = gapMethod;
         }
 
-        // System.out.println(result);
         System.out.println("splitMethod = " + splitMethod);
         System.out.println("gapMethod = " + gapMethod);
     }
